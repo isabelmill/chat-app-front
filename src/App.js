@@ -12,15 +12,13 @@ function App() {
     <Router>
       <div className="App">
         <AppHeader />
-        <main className="container">
-          <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/chat' element={<Chat />} />
-            <Route path='/admin' element={<Admin />} />
-            <Route path='/login' element={<Login />} />
-            <Route path='/signup' element={<Signup />} />
-          </Routes>
-        </main>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/chat' element={<Chat />} />
+          <Route path='/admin' element={<Admin />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/signup' element={<Signup />} />
+        </Routes>
       </div>
     </Router>
   );
