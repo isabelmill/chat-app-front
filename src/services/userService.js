@@ -7,9 +7,10 @@ export const userService = {
     query,
     remove,
     login,
-    signup
+    signup,
     update,
-    add
+    add,
+    getEmptyUser
 }
 
 const users = [{
@@ -17,12 +18,34 @@ const users = [{
     fullname: 'Guest-User',
     email: 'guest@gmail.com',
     password: '',
+    isAdmin: false,
     friendList: [],
     img: '',
 }]
 
-function getLoggedinUser() {
-    return JSON.parse(sessionStorage.getItem(STORAGE_KEY_LOGGEDIN))
+function getEmptyUser(){
+    return {
+        userName: '',
+        fullname: '',
+        email: '',
+        password: '',
+        isAdmin: false,
+        friendList: [],
+        img: '',
+    }
+}
+
+async function getLoggedinUser() {
+    let user = JSON.parse(sessionStorage.getItem(STORAGE_KEY_LOGGEDIN))
+    if (!user) {
+        const gUser = {
+            email: "guest@gmail.com",
+            password: "123"
+        }
+        await login(gUser)
+        user = JSON.parse(sessionStorage.getItem(STORAGE_KEY_LOGGEDIN))
+    }
+    return user
 }
 
 async function query() {
@@ -54,7 +77,7 @@ async function add(user) {
 
 async function remove(userId) {
     try {
-         await httpService.delete(`user/${userId}`)
+        await httpService.delete(`user/${userId}`)
     } catch (err) {
         console.log('Cannot remove user in user-service:', err);
     }

@@ -1,0 +1,111 @@
+.user-modal {
+    position: fixed;
+    z-index: 15;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+
+    .content {
+        background-color: #fefefe;
+        color: #252627;
+        margin: auto;
+        width: fit-content;
+        border-radius: 5px;
+        box-shadow: 0px 2.8px 2.2px rgb(0 0 0 / 2%), 0px 6.7px 5.3px rgb(0 0 0 / 3%), 0px 12.5px 10px rgb(0 0 0 / 4%), 0px 22.3px 17.9px rgb(0 0 0 / 4%), 0px 41.8px 33.4px rgb(0 0 0 / 5%), 0px 100px 80px rgb(0 0 0 / 7%);
+        min-width: 500px;
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px;
+
+            h1 {
+                font-size: rem(35px);
+            }
+
+            svg {
+                cursor: pointer;
+            }
+        }
+
+        .body {
+            padding: 20px;
+            width: 100%;
+
+            form {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 8px;
+
+                button {
+                    margin-top: 20px;
+                    border: none;
+                    padding: 8px;
+                    border-radius: 5px;
+                    background-color: #2196F3;
+                    color: white;
+                    font-size: 18px;
+                    transition: 0.3s;
+
+                    &:hover {
+                        background-color: #48aafb;
+
+                    }
+                }
+
+                .input {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    gap: 8px;
+
+                    p {
+                        font-size: 15px;
+                    }
+
+                    input {
+                        width: 100%;
+                        padding: 8px;
+                        opacity: 1;
+                        background-position: left 12px center;
+                        border-radius: 5px;
+                        border: none;
+                        outline: none;
+                        background-color: #F5F9FE;
+                        transition: 0.1s;
+                        cursor: pointer;
+
+                        &:focus-within {
+                            outline: 2px solid #2196F3;
+                        }
+                    }
+
+                    label{
+                        width: fit-content;
+                    }
+                }
+
+                .user-img {
+                    width: em(100px);
+                    height: em(100px);
+                    background-color: #F5F9FE;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50px;
+                    margin: auto;
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+}

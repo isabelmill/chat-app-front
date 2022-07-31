@@ -9,7 +9,7 @@
 // @import "basics/loading.scss";
 
 // // // Pages
-@import "pages/admin.scss";
+@import "pages/users.scss";
 @import "pages/chat.scss";
 @import "pages/home.scss";
 @import "pages/login.scss";
@@ -17,5 +17,6 @@
 
 // // // Components
 @import "cmps/app-header.scss";
+@import "cmps/user-modal.scss";
 
 

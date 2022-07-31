@@ -40,16 +40,17 @@
         .user {
             width: em(40px);
             height: em(40px);
-            background-color: #2196F3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             border-radius: 50px;
         }
 
-        img {
+        .notification {
             opacity: 0.8;
-            cursor: pointer;
             width: em(35px);
             height: em(35px);
-
+            cursor: pointer;
         }
     }
 }
