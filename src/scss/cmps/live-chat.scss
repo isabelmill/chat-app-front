@@ -1,0 +1,116 @@
+.live-chat {
+    background-color: #b0d0ea;
+    height: 100%;
+    
+    .user-chat {
+        width: 100%;
+        justify-content: space-between;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+
+        .chat-msgs {
+            padding: 8px;
+            display: flex;
+            flex-direction: column;
+            overflow: auto;
+            height: calc(100vh - 215px);
+
+
+            .msg {
+                display: flex;
+                flex-direction: column;
+                width: fit-content;
+                max-width: 250px;
+                margin-bottom: 8px;
+                color: white;
+                padding: 6px 7px 8px 9px;
+                border-radius: 5px;
+                gap: 2px;
+
+                h2 {
+                    font-size: 15px;
+                }
+
+                p {
+                    font-size: 13px;
+                    margin-left: auto;
+                }
+            }
+
+            #you {
+                margin-left: auto;
+                background-color: #2196F3;
+            }
+
+            #other {
+                background-color: #9e9f9f;
+            }
+
+        }
+
+        form {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            margin: 0 5px 5px 5px;
+            position: relative;
+            bottom: 0;
+
+            input {
+                width: 100%;
+                padding: 8px;
+                opacity: 1;
+                background-position: left 12px center;
+                border: none;
+                outline: none;
+                background-color: #F5F9FE;
+                transition: 0.1s;
+                cursor: pointer;
+                font-size: 16px;
+            }
+
+            button {
+                border: none;
+                padding: 8px;
+                background-color: #2196F3;
+                color: white;
+                font-size: 16px;
+                transition: 0.3s;
+
+                &:hover {
+                    background-color: #48aafb;
+
+                }
+            }
+        }
+
+    }
+}
+
+
+
+.no-user {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 8px;
+    gap: 20px;
+    background-color: #b0d0ea;
+    border-radius: 5px;
+
+    .img {
+        width: 250px;
+        height: 250px;
+        border-radius: 5px;
+
+        img {
+            border-radius: 5px;
+            object-fit: cover;
+            height: 100%;
+        }
+    }
+}

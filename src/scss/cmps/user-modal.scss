@@ -44,7 +44,7 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
-                gap: 8px;
+                gap: 12px;
 
                 button {
                     margin-top: 20px;
@@ -89,7 +89,7 @@
                         }
                     }
 
-                    label{
+                    label {
                         width: fit-content;
                     }
                 }
@@ -99,13 +99,27 @@
                     height: em(100px);
                     background-color: #F5F9FE;
                     display: flex;
-                    align-items: center;
-                    justify-content: center;
                     border-radius: 50px;
                     margin: auto;
                     margin-top: 20px;
+                    object-fit: cover;
+
+                    img {
+                        object-fit: cover;
+                        border-radius: 50px;
+                    }
+
+                    p {
+                        margin: auto;
+                    }
                 }
             }
         }
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .user-modal .content {
+        min-width: 100%;
     }
 }

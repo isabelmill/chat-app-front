@@ -6,19 +6,19 @@ import { Users } from './pages/Users.jsx';
 import { Login } from './pages/Login.jsx';
 import { Signup } from './pages/Signup.jsx';
 import './scss/styles.scss'
-import { loadUsers , loadLoggedInUser } from './store/actions/userActions'
+import { loadUsers, loadLoggedInUser } from './store/actions/userActions'
 import { useDispatch } from 'react-redux'
-import { useEffect} from 'react'
+import { useEffect } from 'react'
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
-
   const dispatch = useDispatch()
 
   useEffect(() => {
     dispatch(loadUsers())
     dispatch(loadLoggedInUser())
     // eslint-disable-next-line
-}, [])
+  }, [])
 
   return (
     <Router>

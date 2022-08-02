@@ -3,6 +3,8 @@
     justify-content: center;
     min-height: calc(100vh - 64px);
     padding: 60px 30px;
+    height: 1px;
+    overflow: auto;
 
     .users-info {
         width: 100%;
@@ -80,8 +82,22 @@
             justify-content: center;
             margin-top: 30px;
             gap: 8px;
+            padding-bottom: 60px;
 
-            .user {
+            .first-user {
+                margin-bottom: 20px;
+            }
+
+            .block {
+                height: 2px;
+                width: 100%;
+                background-color: #e5ecf6;
+                margin-bottom: 20px;
+                border-radius: 5px;
+            }
+
+            .user,
+            .first-user {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
@@ -101,17 +117,20 @@
                     gap: 20px;
 
                     .avatar {
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
                         width: em(65px);
                         height: em(65px);
                         background-color: white;
                         object-fit: cover;
                         border-radius: 50px;
-
+                        border-radius: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
 
                         img {
+                            border-radius: 100%;
+                            width: 100%;
+                            height: 100%;
                             object-fit: cover;
                         }
                     }
@@ -131,6 +150,11 @@
                     display: flex;
                     gap: 8px;
 
+                    .edit-btns {
+                        display: flex;
+                        gap: 8px;
+                    }
+
                     svg {
                         cursor: pointer;
                         fill: #191919;
@@ -138,5 +162,44 @@
                 }
             }
         }
+    }
+}
+
+@media screen and (max-width: 550px) {
+
+    .users .users-info .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .users .users-info .all-users .user,
+    .users .users-info .all-users .first-user {
+        .user-name {
+            h1 {
+                font-size: 16px !important;
+            }
+            p{
+                font-size: 14px !important;
+            }
+        }
+    }
+    .users .users-info .all-users .user .btns, .users .users-info .all-users .first-user .btns{
+        svg{
+            width: 20px;
+            height: 20px;
+        }
+    }
+    .users .users-info .header .search-add{
+        width: 100%;
+        justify-content: space-between;
+    }
+    .users .users-info .header .search-add .search{
+        width: 100%;
+        justify-content: space-between;
+    }
+    .users .users-info .header .search-add button{
+        padding: 3px;
+        width: fit-content;
     }
 }

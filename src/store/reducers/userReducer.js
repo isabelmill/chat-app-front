@@ -3,12 +3,13 @@ const INITIAL_STATE = {
     loggedInUser: null
 }
 
+
 export function userReducer(state = INITIAL_STATE, action) {
     switch (action.type) {
         case 'SET_USER':
             return {
                 ...state,
-                loggedInUser: { ...action.user }
+                loggedInUser: JSON.parse(JSON.stringify(action.user))
             }
         case 'SET_USERS':
             return {
@@ -19,7 +20,7 @@ export function userReducer(state = INITIAL_STATE, action) {
         case 'UPDATE_USER':
             return {
                 ...state,
-                users: state.users.map(user => user._id === action.user._id ? action.user : user),
+                users: [...state.users.map(user => user._id === action.user._id ? action.user : user)],
             }
         case 'ADD_USER':
             return {
@@ -29,9 +30,8 @@ export function userReducer(state = INITIAL_STATE, action) {
         case 'REMOVE_USER':
             return {
                 ...state,
-                users: state.users.filter(user => user._id !== action.usersId)
+                users: state.users.filter(user => user._id !== action.userId)
             }
-
         default:
             return state;
     }
