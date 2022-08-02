@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux'
 import { userService } from '../services/userService'
 import { updateUser } from '../store/actions/userActions'
 import { useDispatch } from 'react-redux'
+import moment from 'moment';
 
 export const LiveChat = ({ user, loggedInUser, users }) => {
     const [msg, setMsg] = useState('')
@@ -56,8 +57,7 @@ export const LiveChat = ({ user, loggedInUser, users }) => {
             text: msg,
             room: friendUser.room,
             author: '@' + logged.username,
-            date: new Date(),
-            time: new Date(Date.now()).getHours() + ':' + new Date(Date.now()).getMinutes()
+            time: Date.now()
         }
         await socketService.emit('send message', msgData, friendUser.room)
         setMsgs((list) => [...list, msgData])
@@ -87,7 +87,7 @@ export const LiveChat = ({ user, loggedInUser, users }) => {
                         {msgs.map((msg) =>
                             <div key={msg.id} className="msg" id={msg.author === '@' + loggedInUser.username ? "you" : "other"}>
                                 <h2>{msg.text}</h2>
-                                <p>{msg.time}</p>
+                                <p>{moment(msg.time).format('LT')}</p>
                             </div>)}
                     </div>
                 </div>
