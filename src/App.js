@@ -8,11 +8,19 @@ import { Signup } from './pages/Signup.jsx';
 import './scss/styles.scss'
 import { loadUsers, loadLoggedInUser } from './store/actions/userActions'
 import { useDispatch } from 'react-redux'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import 'react-toastify/dist/ReactToastify.css';
+import { createContext } from 'react';
+
+export const ThemeContext = createContext(null)
 
 function App() {
   const dispatch = useDispatch()
+  const [theme, setTheme] = useState("dark")
+
+  const toggleTheme = () => {
+    setTheme((curr) => (curr === "light" ? "dark" : "light"))
+  }
 
   useEffect(() => {
     dispatch(loadUsers())
@@ -21,18 +29,20 @@ function App() {
   }, [])
 
   return (
-    <Router>
-      <div className="App">
-        <AppHeader />
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/chat' element={<Chat />} />
-          <Route path='/users' element={<Users />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/signup' element={<Signup />} />
-        </Routes>
-      </div>
-    </Router>
+    // <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      <Router>
+        <div className="App" id={theme}>
+          <AppHeader theme={theme} toggleTheme={toggleTheme} />
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/chat' element={<Chat />} />
+            <Route path='/users' element={<Users />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/signup' element={<Signup />} />
+          </Routes>
+        </div>
+      </Router>
+    // </ThemeContext.Provider>
   );
 }
 

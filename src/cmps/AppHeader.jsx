@@ -5,8 +5,9 @@ import { useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom';
 import { login } from '../store/actions/userActions'
 import { useDispatch } from 'react-redux'
+import Switch from "react-switch";
 
-export function AppHeader() {
+export function AppHeader({ theme, toggleTheme }) {
     const { loggedInUser } = useSelector(state => state.userModule)
     const [isOpen, setOpen] = useState(false)
     const [isUserOpen, setUserOpen] = useState(false)
@@ -15,11 +16,14 @@ export function AppHeader() {
     const dispatch = useDispatch()
     const navigate = useNavigate();
 
+    console.log(theme);
+
     if (pathName !== location.pathname) {
         setOpen(false)
         setUserOpen(false)
         setPathname(location.pathname)
     }
+
 
     const logout = () => {
         const gUser = {
@@ -102,11 +106,18 @@ export function AppHeader() {
                 {/* <div className="notification">
                     <img src={require('../assets/imgs/notification.png')} alt="" />
                 </div> */}
+                <Switch
+                    checkedIcon={false}
+                    uncheckedIcon={false}
+                    onChange={toggleTheme}
+                    checked={theme === "dark"}
+                    onColor={'#010409'}
+                />
                 <div className="user" onClick={() => setUserOpen(current => !current)}>
                     <img src={loggedInUser.img} alt="" />
                 </div>
                 <div className="hamburger">
-                    <Hamburger color="#191919" size={25} toggled={isOpen} toggle={setOpen} />
+                    <Hamburger color={theme === "dark" ? "#F0F6FC" : "#191919"} size={25} toggled={isOpen} toggle={setOpen} />
                 </div>
             </div>
         </section>

@@ -1,0 +1,168 @@
+#dark {
+    background-color: #010409;
+    color: #F0F6FC;
+
+    .user-modal .content {
+        background-color: #161B22;
+        border: 1px solid rgba(240, 246, 252, 0.1);
+        color: #F0F6FC;
+
+        svg {
+            fill: #F0F6FC;
+
+        }
+
+        .body form .user-img {
+            background-color: #0E1117;
+            border: 1px solid rgba(240, 246, 252, 0.1);
+
+        }
+
+        input {
+            background-color: #0E1117;
+            color: #F0F6FC;
+            border: 1px solid rgba(240, 246, 252, 0.1);
+
+        }
+
+    }
+
+    .app-header {
+        background-color: #161B22;
+
+        .modal .content {
+            background-color: #161B22;
+            color: #F0F6FC;
+            border: 1px solid rgba(240, 246, 252, 0.1);
+
+            .link {
+                &:hover {
+                    background-color: #3a3e44 !important;
+                }
+            }
+        }
+
+        .user-info-modal {
+            background-color: #161B22;
+
+            .header {
+                border-bottom: 1px solid rgba(240, 246, 252, 0.1);
+
+                svg {
+                    fill: #F0F6FC;
+                }
+            }
+
+            .user-info {
+                border-bottom: 1px solid rgba(240, 246, 252, 0.1);
+
+            }
+        }
+    }
+
+    .home {
+        .user-info {
+            background-color: #161B22;
+            border: 1px solid rgba(240, 246, 252, 0.1);
+        }
+    }
+
+    .chat {
+        background-color: #010409;
+
+        .users-list {
+            background-color: #010409;
+
+            .user {
+                background-color: #161B22 !important;
+                border: 1px solid rgba(240, 246, 252, 0.1);
+
+            }
+        }
+    }
+
+    .live-chat {
+        background-color: #3a3e44;
+
+        .user-chat form input {
+            background-color: #0E1117;
+            color: #F0F6FC;
+        }
+    }
+
+    .no-user {
+        background-color: #3a3e44;
+    }
+
+    .users {
+        .users-info {
+
+            .header {
+                .search-add .search {
+                    background-color: #0E1117;
+                    border: 1px solid rgba(240, 246, 252, 0.1);
+
+                    input {
+                        background-color: #0E1117;
+
+                    }
+                }
+            }
+
+            .all-users {
+                .block {
+                    background-color: #161B22;
+
+                }
+
+                .user,
+                .first-user {
+                    background-color: #161B22;
+                    border: 1px solid rgba(240, 246, 252, 0.1);
+
+                    &:hover {
+                        background-color: #22272d !important;
+                    }
+
+                    .btns {
+                        svg {
+                            fill: #F0F6FC;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+    .login {
+        gap: 0;
+        justify-content: center;
+
+        .login-form {
+            background-color: #161B22;
+            padding: 20px;
+            border-radius: 5px;
+
+        }
+
+        .login-img {
+            display: none;
+        }
+    }
+
+    .signup {
+        gap: 0;
+        justify-content: center;
+
+        .signup-form {
+            background-color: #161B22;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .signup-img {
+            display: none;
+        }
+    }
+}
